@@ -35,12 +35,12 @@ export const setupPDFHeader = async (doc: jsPDF, details: HeaderDetails) => {
   // Initialize A4 in portrait
   doc.setProperties({
     title: `Survey Form - Area ${details.areaCode}`,
-    creator: "Kerabari Municipality",
+    creator: "Ninja",
   });
 
   // Set title and main header - slightly smaller font sizes
   doc.setFontSize(14);
-  doc.text("Kerabari Sites Management", doc.internal.pageSize.width / 2, 15, {
+  doc.text("Ninja Sites Management", doc.internal.pageSize.width / 2, 15, {
     align: "center",
   });
   doc.setFontSize(10);

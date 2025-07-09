@@ -1,4 +1,4 @@
-import { PaperPlaneIcon, PersonIcon, QuestionMarkIcon } from "@radix-ui/react-icons";
+import { PaperPlaneIcon, PersonIcon } from "@radix-ui/react-icons";
 import {
   LayoutGrid,
   LucideIcon,
@@ -20,7 +20,8 @@ import {
   Clock,
   Send,
   Computer,
-  Check
+  Check,
+  HelpCircle
 } from "lucide-react";
 import { Form } from "react-hook-form";
 
@@ -64,7 +65,7 @@ const menuConfig: Menu[] = [
   {
     href: "/issues",
     label: "Issues",
-    icon: QuestionMarkIcon,
+    icon: HelpCircle,
     roles: ["admin", "superadmin"],
     submenus: [],
   },
@@ -73,7 +74,7 @@ const menuConfig: Menu[] = [
     label: "Solutions",
     icon: Check,
     roles: ["admin", "superadmin"],
-  },
+  }
   // {
   //   href: "/businesses",
   //   label: "Businesses",

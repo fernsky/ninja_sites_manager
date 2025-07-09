@@ -13,8 +13,6 @@ import { useEffect } from "react";
 import { EnumeratorAssignment } from "@/components/building/enumerator-assignment";
 import { Form } from "@/components/ui/form";
 import { BasicInformationSection } from "@/components/building/edit/basic-information-section";
-import { BuildingDetailsSection } from "@/components/building/edit/building-details-section";
-import { AccessibilitySection } from "@/components/building/edit/accessibility-section";
 import { EditPageLayout } from "@/components/building/edit/edit-page-layout";
 import { Building2, Info, Clock } from "lucide-react";
 import { motion } from "framer-motion";
@@ -185,14 +183,6 @@ export default function EditBuilding({ params }: { params: { id: string } }) {
             <BasicInformationSection
               form={form}
               icon={<Info className="h-5 w-5" />}
-            />
-            <BuildingDetailsSection
-              form={form}
-              icon={<Building2 className="h-5 w-5" />}
-            />
-            <AccessibilitySection
-              form={form}
-              icon={<Clock className="h-5 w-5" />}
             />
           </form>
         </Form>

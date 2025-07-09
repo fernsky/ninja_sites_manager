@@ -15,8 +15,8 @@ export const metadata: Metadata = {
         ? `https://${process.env.VERCEL_URL}`
         : `http://localhost:${process.env.PORT || 3000}`,
   ),
-  title: "Kerabari Sites Management",
-  description: "Kerabari Sites Management Survey Tracking Mechanism",
+  title: "Ninja Sites Management",
+  description: "Ninja Sites Management Survey Tracking Mechanism",
   alternates: {
     canonical: "/",
   },

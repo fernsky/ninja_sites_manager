@@ -250,7 +250,10 @@ const quickFilters = [
 ];
 
 export default function IssuesPage() {
-  const [filters, setFilters] = useState<FilterFormData>({});
+  const [filters, setFilters] = useState<FilterFormData>({
+    sortBy: "createdAt",
+    sortOrder: "desc",
+  });
   const [showAdvancedFilters, setShowAdvancedFilters] = useState(false);
   const [selectedIssue, setSelectedIssue] = useState<any>(null);
   const [showSolveDialog, setShowSolveDialog] = useState(false);

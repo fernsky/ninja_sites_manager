@@ -4,7 +4,6 @@ import { areas, surveyForms } from "@/server/db/schema";
 import { createTRPCRouter, superAdminProcedure } from "../../trpc";
 import { FormAttachment } from "@/types";
 import * as z from "zod";
-import { fetchSurveySubmissions } from "@/server/utils";
 import { TRPCError } from "@trpc/server";
 import dotenv from "dotenv";
 
@@ -139,21 +138,6 @@ export const superadminRouter = createTRPCRouter({
       } = surveyForm[0];
 
       console.log("Fetching submissions for form:", surveyForm[0].name);
-      await fetchSurveySubmissions(
-        {
-          siteEndpoint: siteEndpoint as string,
-          userName: userName as string,
-          password: password as string,
-          odkFormId: odkFormId as string,
-          odkProjectId: odkProjectId as number,
-          attachmentPaths: attachmentPaths as FormAttachment[],
-          formId: input.id,
-          startDate: input.startDate,
-          endDate: input.endDate,
-          count: input.count,
-        },
-        ctx,
-      );
     }),
 
   /**
