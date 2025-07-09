@@ -70,7 +70,7 @@ const menuConfig: Menu[] = [
     submenus: [],
   },
   {
-    href: "/buildings",
+    href: "/solutions",
     label: "Solutions",
     icon: Check,
     roles: ["admin", "superadmin"],

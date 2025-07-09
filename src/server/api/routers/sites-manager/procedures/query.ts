@@ -569,12 +569,26 @@ export const getSolutions = protectedProcedure
       if (andCondition) conditions = andCondition;
     }
 
+    // Map camelCase sort fields to snake_case column names
+    const getSortColumn = (sortBy: string) => {
+      switch (sortBy) {
+        case "solvedAt":
+          return solutions.solvedAt;
+        case "createdAt":
+          return solutions.createdAt;
+        case "whoSolved":
+          return solutions.whoSolved;
+        default:
+          return solutions.solvedAt;
+      }
+    };
+
     const [solutionsData, totalCount] = await Promise.all([
       ctx.db
         .select()
         .from(solutions)
         .where(conditions)
-        .orderBy(sql`${sql.identifier(sortBy)} ${sql.raw(sortOrder)}`)
+        .orderBy(sortOrder === "desc" ? desc(getSortColumn(sortBy)) : asc(getSortColumn(sortBy)))
         .limit(limit)
         .offset(offset),
 
