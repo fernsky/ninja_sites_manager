@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Table,
@@ -441,6 +442,16 @@ export function SolutionsList() {
                 <Clock className="h-4 w-4" />
                 Created: {new Date(solution.createdAt).toLocaleDateString()}
               </div>
+
+              {/* Action Button */}
+              <div className="pt-2">
+                <Link href={`/solutions/${solution.id}`}>
+                  <Button size="sm" variant="outline" className="w-full">
+                    <Eye className="mr-2 h-4 w-4" />
+                    View Issue
+                  </Button>
+                </Link>
+              </div>
             </CardContent>
           </Card>
         ))}
@@ -559,10 +570,12 @@ export function SolutionsList() {
               </TableCell>
               <TableCell className="py-4">
                 <div className="flex gap-2">
-                  <Button size="sm" variant="outline">
-                    <Eye className="mr-2 h-4 w-4" />
-                    View Issue
-                  </Button>
+                  <Link href={`/solutions/${solution.id}`}>
+                    <Button size="sm" variant="outline">
+                      <Eye className="mr-2 h-4 w-4" />
+                      View Issue
+                    </Button>
+                  </Link>
                 </div>
               </TableCell>
             </TableRow>

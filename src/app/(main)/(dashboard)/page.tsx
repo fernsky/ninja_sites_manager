@@ -57,7 +57,7 @@ const DashboardPage = async () => {
                 </Button>
               </Link>
 
-              <Link href="/buildings">
+              <Link href="/solutions">
                 <Button
                   variant="outline"
                   className="w-full h-24 flex flex-col items-center justify-center space-y-2"
